@@ -276,6 +276,42 @@ It is actually combination of two commands: `git fetch` followed by `git merge`.
 > [!NOTE]
 > `git pull` will only update the branch you are currently on.
 
+## 5) Writing meaningfull commit messages
+
+Writing clear and consistent commit messages is essential for understanding the history of a project, collaborating with others, and automating tasks like changelog generation or semantic versioning. A good commit message should explain what changed and why, not just how.
+
+A common structure is `<type>(<scope>): <short summary>`, where:
+* **type:** Describes the kind of change, e.g. feat (new feature), fix (bug fix), docs (documentation), refactor (code improvement without changing behavior), chore (maintenance), etc.
+* **scope:** Optional, specifies the part of the code affected, e.g. backend, ui, database...
+* **short summary:** A concise description (ideally <50 characters) of the change.
+
+Examples:
+```
+# Feature addition
+git commit -m "feat(translation): add Spanish greeting"
+
+# Bug fix
+git commit -m "fix(english.txt): correct typo in greeting"
+
+# Documentation update
+git commit -m "docs: add instructions for GitHub SSH setup"
+
+# Refactor
+git commit -m "refactor: simplify commit alias for log view"
+```
+
+### 5.1) Best practices
+
+* Keep the summary **short and imperative**: "Add", "Fix", "Update", not "Added" or "Fixed".
+* Use the body to **explain why**, not what — the code itself shows what changed.
+* **Group related changes** into a single commit rather than spreading them across multiple commits.
+* Avoid vague messages like "update" or "fix".
+
+#### Recommended reads
+* [The commit convention](https://www.conventionalcommits.org/en/v1.0.0/#summary)
+* [How to Write Better Git Commit Messages – A Step-By-Step Guide](https://www.freecodecamp.org/news/how-to-write-better-git-commit-messages/)
+
+
 ---
 Congratulations! You have completed your first practical Git exercise.
 This exercise covered the basics of Git, and includes everything you need to know to work on your WASA project.
