@@ -306,7 +306,7 @@ git commit -m "refactor: simplify commit alias for log view"
 * Keep the summary **short and imperative**: "Add", "Fix", "Update", not "Added" or "Fixed".
 * Use the body to **explain why**, not what — the code itself shows what changed.
 * **Group related changes** into a single commit rather than spreading them across multiple commits.
-* Avoid vague messages like "update" or "fix".
+* Avoid vague messages like "update to version 2" or "fix some bugs".
 
 #### Recommended reads
 * [The commit convention](https://www.conventionalcommits.org/en/v1.0.0/#summary)
