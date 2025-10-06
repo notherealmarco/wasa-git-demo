@@ -249,10 +249,11 @@ In complex projects, you may have multiple remotes (e.g. one for the main reposi
 
 Finally, you are ready to push your changes to the remote repository.
 
-#### Push the branch main to the remote named origin
+```
+# Push the branch main to the remote named origin
 git push origin main
 
-#### Push every local branch (this includes main too)
+# Push every local branch (this includes main too)
 git push --all origin
 ```
 
