@@ -36,7 +36,7 @@ git init
 git branch -m main
 ```
 
-## 1) First commits on main
+## 1) Our first commits on main
 
 We are going to create three files, each containing a translation of "Hello world!" in a different language, and commit them one by one.
 
@@ -66,7 +66,7 @@ git lg
 
 At this point you have three files and three commits on the `main` branch.
 
-## 2) Experiment branch and a short‑lived feature branch
+## 2) Out first branches
 
 ```bash
 # Create a branch to try something
@@ -118,7 +118,7 @@ A text editor may open to ask you to edit the default merge commit message. You 
 When merging with a strategy different from `fast-forward`, git creates a new commit that has two parents: the current commit on `main` and the latest commit on `dev1`. We can see this in the history by running `git lg`.
 
 
-## 3) Diverging edits to cause a merge conflict later
+## 3) Handling merge conflicts
 
 We’ll create two branches that both change `english.txt` in different ways.
 
@@ -166,7 +166,7 @@ git lg
 
 `main` now contains the `dev3` version (“Hello World”). The `dev4` branch still contains its own conflicting version (“Hello world!!”).
 
-## 4) Merge conflict and resolution
+### 3.1) Creating the conflict
 
 ```bash
 # Merge dev4 into main; this should conflict on english.txt
@@ -202,7 +202,7 @@ git lg
 
 You’ve resolved the conflict by keeping a clean final line: `Hello world!`.
 
-## 5) Git remotes: push and fetch
+## 4) Git remotes: push and fetch
 
 Git is more powerful when you can share your work with others, or back it up on a remote server. This is done using remotes.
 There are plenty of them, with the most popular being GitHub, GitLab, BitBucket, Gitea and Codeberg.
@@ -219,7 +219,7 @@ You can add a license directly on GitHub when creating the repository, or you ca
 
 Once the repository is created, you are ready to link your local repository to the remote one. You can do it in two ways: HTTPS or SSH. I really recommend using SSH, as it is simpler and it uses key-based authentication, so you don't need to configure a credential manager or enter your username and password every time you push or fetch.
 
-### 5.1 Setting up SSH keys (if you haven't done it yet)
+### 4.1) Setting up SSH keys (if you haven't done it yet)
 If you don't have an SSH key pair yet, you can create one by running `ssh-keygen -t ed25519`. ed25519 is a modern and secure algorithm for generating SSH keys. If your system does not support ed25519, you can use `rsa` instead: `ssh-keygen -t rsa -b 4096`.
 
 When prompted, leave the file path as default (just press Enter). You can then choose to set a passphrase for your key, which adds an extra layer of security. If you set a passphrase, you will need to enter it every time you use the key, unless you use an SSH agent.
@@ -236,7 +236,7 @@ Now you need to add the public key to your GitHub account. You can do this by co
 > [!CAUTION]
 > NEVER send your private key to anyone or upload it anywhere. The private key is used to prove your identity, and if someone else gets access to it, they can impersonate you and hack into your GitHub account. GitHub and other services will only need your public key to verify your identity.
 
-### 5.2 Adding the remote and pushing your changes to GitHub
+### 4.2) Adding the remote and pushing your changes to GitHub
 
 From your GitHub repository page, copy the SSH URL (it should look something like `git@github.com:notherealmarco/wasa-git-demo.git`). Now you can add the remote to your local repository:
 
@@ -266,7 +266,7 @@ From now on, you can simply run `git push` to push the current branch to the rem
 
 If you open your GitHub repository page, you should see all your commits and branches there.
 
-### Pulling remote changes
+### 4.3) Pulling remote changes
 
 When you are working in groups (or if you are working on multiple machines), you will need to pull remote changes to keep your local repository up to date.
 
